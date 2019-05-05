@@ -1,0 +1,49 @@
+// 20190505113657
+// http://localhost/movie_app/pie_data.php
+
+[
+  {
+    "label": "",
+    "value": "1"
+  },
+  {
+    "label": "Brazil, France, Germany",
+    "value": "3"
+  },
+  {
+    "label": "France",
+    "value": "1"
+  },
+  {
+    "label": "Germany",
+    "value": "2"
+  },
+  {
+    "label": "Greece",
+    "value": "1"
+  },
+  {
+    "label": "India",
+    "value": "4"
+  },
+  {
+    "label": "Netherlands",
+    "value": "1"
+  },
+  {
+    "label": "Turkey",
+    "value": "1"
+  },
+  {
+    "label": "UK, Sierra Leone",
+    "value": "1"
+  },
+  {
+    "label": "USA",
+    "value": "5"
+  },
+  {
+    "label": "USA, Canada",
+    "value": "2"
+  }
+]
