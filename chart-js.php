@@ -4,29 +4,24 @@
 <html lang="en">
 <!--<![endif]-->
 
-<!-- Mirrored from seantheme.com/color-admin-v4.3/admin/html/calendar.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 13 Apr 2019 08:04:25 GMT -->
+<!-- Mirrored from seantheme.com/color-admin-v4.3/admin/html/chart-js.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 13 Apr 2019 08:04:19 GMT -->
 <head>
 	<meta charset="utf-8" />
-	<title>Color Admin | Calendar</title>
+	<title>Color Admin | Chart JS</title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
 	
 	<!-- ================== BEGIN BASE CSS STYLE ================== -->
 	<link href="../../../../fonts.googleapis.com/cssff98.css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
-	<link href="../assets/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
-	<link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-	<link href="../assets/plugins/font-awesome/css/all.min.css" rel="stylesheet" />
-	<link href="../assets/plugins/animate/animate.min.css" rel="stylesheet" />
-	<link href="../assets/css/default/style.min.css" rel="stylesheet" />
-	<link href="../assets/css/default/style-responsive.min.css" rel="stylesheet" />
-	<link href="../assets/css/default/theme/default.css" rel="stylesheet" id="theme" />
+	<link href="assets/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="assets/plugins/font-awesome/css/all.min.css" rel="stylesheet" />
+	<link href="assets/plugins/animate/animate.min.css" rel="stylesheet" />
+	<link href="assets/css/default/style.min.css" rel="stylesheet" />
+	<link href="assets/css/default/style-responsive.min.css" rel="stylesheet" />
+	<link href="assets/css/default/theme/default.css" rel="stylesheet" id="theme" />
 	<!-- ================== END BASE CSS STYLE ================== -->
-	
-	<!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
-	<link href="../assets/plugins/fullcalendar/fullcalendar.print.css" rel="stylesheet" media='print' />
-	<link href="../assets/plugins/fullcalendar/fullcalendar.min.css" rel="stylesheet" />
-	<!-- ================== END PAGE LEVEL STYLE ================== -->
 	
 	<!-- ================== BEGIN BASE JS ================== -->
 	<script src="../assets/plugins/pace/pace.min.js"></script>
@@ -316,7 +311,7 @@
 							<li><a href="email_newsletter.html">Newsletter Template</a></li>
 						</ul>
 					</li>
-					<li class="has-sub">
+					<li class="has-sub active">
 						<a href="javascript:;">
 							<b class="caret"></b>
 							<i class="fa fa-chart-pie"></i>
@@ -325,11 +320,11 @@
 						<ul class="sub-menu">
 							<li><a href="chart-flot.html">Flot Chart</a></li>
 							<li><a href="chart-morris.html">Morris Chart</a></li>
-							<li><a href="chart-js.html">Chart JS</a></li>
+							<li class="active"><a href="chart-js.html">Chart JS</a></li>
 							<li><a href="chart-d3.html">d3 Chart</a></li>
 						</ul>
 					</li>
-					<li class="active"><a href="calendar.html"><i class="fa fa-calendar"></i> <span>Calendar</span></a></li>
+					<li><a href="calendar.html"><i class="fa fa-calendar"></i> <span>Calendar</span></a></li>
 					<li class="has-sub">
 						<a href="javascript:;">
 							<b class="caret"></b>
@@ -483,69 +478,179 @@
 			<!-- begin breadcrumb -->
 			<ol class="breadcrumb pull-right">
 				<li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
-				<li class="breadcrumb-item active">Calendar</li>
+				<li class="breadcrumb-item"><a href="javascript:;">Chart</a></li>
+				<li class="breadcrumb-item active">Chart JS</li>
 			</ol>
 			<!-- end breadcrumb -->
 			<!-- begin page-header -->
-			<h1 class="page-header">Calendar <small>header small text goes here...</small></h1>
+			<h1 class="page-header">Chart JS <small>header small text goes here...</small></h1>
 			<!-- end page-header -->
-			<hr class="bg-grey-lighter" />
-			<!-- begin vertical-box -->
-			<div class="vertical-box">
-				<!-- begin event-list -->
-				<div class="vertical-box-column p-r-30 d-none d-lg-table-cell" style="width: 215px">
-					<div id="external-events" class="fc-event-list">
-						<h5 class="m-t-0 m-b-15">Draggable Events</h5>
-						<div class="fc-event" data-color="#00acac">
-							<div class="fc-event-icon"><i class="fas fa-circle fa-fw f-s-9 text-success"></i></div>
-							Meeting with Client
+			<!-- begin row -->
+			<div class="row">
+				<!-- begin col-6 -->
+				<div class="col-lg-6">
+					<!-- begin panel -->
+					<div class="panel panel-inverse" data-sortable-id="chart-js-1">
+						<div class="panel-heading">
+							<div class="panel-heading-btn">
+								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+							</div>
+							<h4 class="panel-title">Line Chart</h4>
 						</div>
-						<div class="fc-event" data-color="#348fe2">
-							<div class="fc-event-icon"><i class="fas fa-circle fa-fw f-s-9 text-primary"></i></div>
-							IOS App Development
-						</div>
-						<div class="fc-event" data-color="#f59c1a">
-							<div class="fc-event-icon"><i class="fas fa-circle fa-fw f-s-9 text-warning"></i></div>
-							Group Discussion
-						</div>
-						<div class="fc-event" data-color="#ff5b57">
-							<div class="fc-event-icon"><i class="fas fa-circle fa-fw f-s-9 text-danger"></i></div>
-							New System Briefing
-						</div>
-						<div class="fc-event">
-							<div class="fc-event-icon"><i class="fas fa-circle fa-fw f-s-9 text-inverse"></i></div>
-							Brainstorming
-						</div>
-						<hr class="bg-grey-lighter m-b-15" />
-						<h5 class="m-t-0 m-b-15">Other Events</h5>
-						<div class="fc-event" data-color="#b6c2c9">
-							<div class="fc-event-icon"><i class="fas fa-circle fa-fw f-s-9 text-grey"></i></div>
-							Other Event 1
-						</div>
-						<div class="fc-event" data-color="#b6c2c9">
-							<div class="fc-event-icon"><i class="fas fa-circle fa-fw f-s-9 text-grey"></i></div>
-							Other Event 2
-						</div>
-						<div class="fc-event" data-color="#b6c2c9">
-							<div class="fc-event-icon"><i class="fas fa-circle fa-fw f-s-9 text-grey"></i></div>
-							Other Event 3
-						</div>
-						<div class="fc-event" data-color="#b6c2c9">
-							<div class="fc-event-icon"><i class="fas fa-circle fa-fw f-s-9 text-grey"></i></div>
-							Other Event 4
-						</div>
-						<div class="fc-event" data-color="#b6c2c9">
-							<div class="fc-event-icon"><i class="fas fa-circle fa-fw f-s-9 text-grey"></i></div>
-							Other Event 5
+						<div class="panel-body">
+							<p>
+								A line chart is a way of plotting data points on a line.
+								Often, it is used to show trend data, and the comparison of two data sets.
+							</p>
+							<div>
+								<canvas id="line-chart" data-render="chart-js"></canvas>
+							</div>
 						</div>
 					</div>
+					<!-- end panel -->
 				</div>
-				<!-- end event-list -->
-				<!-- begin calendar -->
-				<div id="calendar" class="vertical-box-column calendar"></div>
-				<!-- end calendar -->
+				<!-- end col-6 -->
+				<!-- begin col-6 -->
+				<div class="col-lg-6">
+					<!-- begin panel -->
+					<div class="panel panel-inverse" data-sortable-id="chart-js-2">
+						<div class="panel-heading">
+							<div class="panel-heading-btn">
+								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+							</div>
+							<h4 class="panel-title">Bar Chart</h4>
+						</div>
+						<div class="panel-body">
+							<p>
+								A bar chart is a way of showing data as bars.
+								It is sometimes used to show trend data, and the comparison of multiple data sets side by side.
+							</p>
+							<div>
+								<canvas id="bar-chart" data-render="chart-js"></canvas>
+							</div>
+						</div>
+					</div>
+					<!-- end panel -->
+				</div>
+				<!-- end col-6 -->
 			</div>
-			<!-- end vertical-box -->
+			<!-- end row -->
+			<!-- begin row -->
+			<div class="row">
+				<!-- begin col-6 -->
+				<div class="col-lg-6">
+					<!-- begin panel -->
+					<div class="panel panel-inverse" data-sortable-id="flot-chart-3">
+						<div class="panel-heading">
+							<div class="panel-heading-btn">
+								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+							</div>
+							<h4 class="panel-title">Radar Chart</h4>
+						</div>
+						<div class="panel-body">
+							<p>
+								A radar chart is a way of showing multiple data points and the variation between them.
+								They are often useful for comparing the points of two or more different data sets.
+							</p>
+							<div>
+								<canvas id="radar-chart" data-render="chart-js"></canvas>
+							</div>
+						</div>
+					</div>
+					<!-- end panel -->
+				</div>
+				<!-- end col-6 -->
+				<!-- begin col-6 -->
+				<div class="col-lg-6">
+					<!-- begin panel -->
+					<div class="panel panel-inverse" data-sortable-id="chart-js-4">
+						<div class="panel-heading">
+							<div class="panel-heading-btn">
+								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+							</div>
+							<h4 class="panel-title">Polar Area Chart</h4>
+						</div>
+						<div class="panel-body">
+							<p>
+								Polar area charts are similar to pie charts, but each segment has the same angle - the radius of the segment 
+								differs depending on the value.
+							</p>
+							<div>
+								<canvas id="polar-area-chart" data-render="chart-js"></canvas>
+							</div>
+						</div>
+					</div>
+					<!-- end panel -->
+				</div>
+				<!-- end col-6 -->
+			</div>
+			<!-- end row -->
+			<!-- begin row -->
+			<div class="row">
+				<!-- begin col-6 -->
+				<div class="col-md-6">
+					<!-- begin panel -->
+					<div class="panel panel-inverse" data-sortable-id="flot-chart-5">
+						<div class="panel-heading">
+							<div class="panel-heading-btn">
+								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+							</div>
+							<h4 class="panel-title">Pie Chart</h4>
+						</div>
+						<div class="panel-body">
+							<p>
+								Pie and doughnut charts are probably the most commonly used chart there are. They are divided into segments, the arc of each segment shows the proportional value of each piece of data.
+							</p>
+							<div>
+								<canvas id="pie-chart" data-render="chart-js"></canvas>
+							</div>
+						</div>
+					</div>
+					<!-- end panel -->
+				</div>
+				<!-- end col-6 -->
+				<!-- begin col-6 -->
+				<div class="col-md-6">
+					<!-- begin panel -->
+					<div class="panel panel-inverse" data-sortable-id="chart-js-6">
+						<div class="panel-heading">
+							<div class="panel-heading-btn">
+								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+							</div>
+							<h4 class="panel-title">Doughnut Chart</h4>
+						</div>
+						<div class="panel-body">
+							<p>
+								Pie and doughnut charts are registered under two aliases in the Chart core. Other than their different default value, and different alias, they are exactly the same.
+							</p>
+							<div>
+								<canvas id="doughnut-chart" data-render="chart-js"></canvas>
+							</div>
+						</div>
+					</div>
+					<!-- end panel -->
+				</div>
+				<!-- end col-6 -->
+			</div>
+			<!-- end row -->
 		</div>
 		<!-- end #content -->
 		
@@ -672,43 +777,33 @@
 	<!-- end page container -->
 	
 	<!-- ================== BEGIN BASE JS ================== -->
-	<script src="../assets/plugins/jquery/jquery-3.3.1.min.js"></script>
-	<script src="../assets/plugins/jquery-ui/jquery-ui.min.js"></script>
-	<script src="../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
+	<script src="assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+	<script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<!--[if lt IE 9]>
 		<script src="../assets/crossbrowserjs/html5shiv.js"></script>
 		<script src="../assets/crossbrowserjs/respond.min.js"></script>
 		<script src="../assets/crossbrowserjs/excanvas.min.js"></script>
 	<![endif]-->
-	<script src="../assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="../assets/plugins/js-cookie/js.cookie.js"></script>
-	<script src="../assets/js/theme/default.min.js"></script>
-	<script src="../assets/js/apps.min.js"></script>
+	<script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="assets/plugins/js-cookie/js.cookie.js"></script>
+	<script src="assets/js/theme/default.min.js"></script>
+	<script src="assets/js/apps.min.js"></script>
 	<!-- ================== END BASE JS ================== -->
 	
 	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
-	<script src="../assets/plugins/fullcalendar/lib/moment.min.js"></script>
-	<script src="../assets/plugins/fullcalendar/fullcalendar.min.js"></script>
-	<script src="../assets/js/demo/calendar.demo.min.js"></script>
+	<script src="assets/plugins/chart-js/Chart.min.js"></script>
+	<script src="assets/js/demo/chart-js.demo.min.js"></script>
 	<!-- ================== END PAGE LEVEL JS ================== -->
 	
 	<script>
 		$(document).ready(function() {
 			App.init();
-			Calendar.init();
+			ChartJs.init();
 		});
 	</script>
-<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
 
-	  ga('create', 'UA-53034621-1', 'auto');
-	  ga('send', 'pageview');
-
-	</script>
 </body>
 
-<!-- Mirrored from seantheme.com/color-admin-v4.3/admin/html/calendar.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 13 Apr 2019 08:04:34 GMT -->
+<!-- Mirrored from seantheme.com/color-admin-v4.3/admin/html/chart-js.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 13 Apr 2019 08:04:23 GMT -->
 </html>

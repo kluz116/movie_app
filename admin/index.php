@@ -10,20 +10,7 @@ if(!isset($_SESSION['email']) && empty($_SESSION['email'])){
   header("Location:login.php");
   exit();
   }
-
-
-   $date =$db->prepare('select COUNT(*) AS "Total", Year from searched_movie  group by Year ');
-   $date->execute();
-    $data = array();
-   while ($row= $date->fetch(PDO::FETCH_ASSOC)) {
-         $count = $row['Total'];
-         $Year = $row['Year'];
-
-         $data[] = array('label' => $Year,'count'=>$count );
-
-   }
-
-     
+    
 ?>
 
 <!DOCTYPE html>
@@ -318,7 +305,7 @@ if(!isset($_SESSION['email']) && empty($_SESSION['email'])){
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
 							</div>
-							<h4 class="panel-title">Pie Chart</h4>
+							<h4 class="panel-title">Movies Count Per Release Year</h4>
 						</div>
 						<div class="panel-body">
 							<div id="chart" ></div>
@@ -338,10 +325,10 @@ if(!isset($_SESSION['email']) && empty($_SESSION['email'])){
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
 							</div>
-							<h4 class="panel-title">Donut Chart</h4>
+							<h4 class="panel-title">Weekly Movie Search</h4>
 						</div>
 						<div class="panel-body">
-							<!--<svg width="600" height="500" id="svg1"></svg>-->
+							<div id="chart_two" ></div>
 						</div>
 					</div>
 					<!-- end panel -->
@@ -400,7 +387,7 @@ if(!isset($_SESSION['email']) && empty($_SESSION['email'])){
       (function(d3) {
         'use strict';
 
-        var dataset = <?php echo json_encode($data); ?>;
+        var dataset = <?php $obj->MoviesCountReleaseYear(); ?>;
 
         var width = 500;
         var height = 500;
@@ -412,6 +399,73 @@ if(!isset($_SESSION['email']) && empty($_SESSION['email'])){
         var color = d3.scaleOrdinal(d3.schemeCategory20b);
 
         var svg = d3.select('#chart')
+          .append('svg')
+          .attr('width', width)
+          .attr('height', height)
+          .append('g')
+          .attr('transform', 'translate(' + (width / 2) + 
+            ',' + (height / 2) + ')');
+
+        var arc = d3.arc()
+          .innerRadius(radius - donutWidth)
+          .outerRadius(radius);
+
+        var pie = d3.pie()
+          .value(function(d) { return d.count; })
+          .sort(null);
+
+        var path = svg.selectAll('path')
+          .data(pie(dataset))
+          .enter()
+          .append('path')
+          .attr('d', arc)
+          .attr('fill', function(d, i) { 
+            return color(d.data.label);
+          });
+
+        var legend = svg.selectAll('.legend')                     // NEW
+          .data(color.domain())                                   // NEW
+          .enter()                                                // NEW
+          .append('g')                                            // NEW
+          .attr('class', 'legend')                                // NEW
+          .attr('transform', function(d, i) {                     // NEW
+            var height = legendRectSize + legendSpacing;          // NEW
+            var offset =  height * color.domain().length / 2;     // NEW
+            var horz = -2 * legendRectSize;                       // NEW
+            var vert = i * height - offset;                       // NEW
+            return 'translate(' + horz + ',' + vert + ')';        // NEW
+          });                                                     // NEW
+
+        legend.append('rect')                                     // NEW
+          .attr('width', legendRectSize)                          // NEW
+          .attr('height', legendRectSize)                         // NEW
+          .style('fill', color)                                   // NEW
+          .style('stroke', color);                                // NEW
+          
+        legend.append('text')                                     // NEW
+          .attr('x', legendRectSize + legendSpacing)              // NEW
+          .attr('y', legendRectSize - legendSpacing)              // NEW
+          .text(function(d) { return d; });                       // NEW
+
+      })(window.d3);
+    </script>
+
+    <script>
+      (function(d3) {
+        'use strict';
+
+        var dataset = <?php $obj->Chartweekly(); ?>;
+
+        var width = 500;
+        var height = 500;
+        var radius = Math.min(width, height) / 2;
+        var donutWidth = 75;
+        var legendRectSize = 18;                                  // NEW
+        var legendSpacing = 4;                                    // NEW
+
+        var color = d3.scaleOrdinal(d3.schemeCategory20b);
+
+        var svg = d3.select('#chart_two')
           .append('svg')
           .attr('width', width)
           .attr('height', height)
@@ -609,7 +663,7 @@ d3.json("../weekly_search.php", function(error, data) {
          .attr("x", width - 100)
          .attr("text-anchor", "end")
          .attr("stroke", "black")
-         .text("Year");
+         .text("Days");
 
         g.append("g")
          .call(d3.axisLeft(y).tickFormat(function(d){

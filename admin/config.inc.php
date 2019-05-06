@@ -151,6 +151,40 @@ public function MoviesWithNoAwards()
 
 
 
+ public function Chartweekly()
+{
+  $date =$this->dbh->prepare('SELECT DAYNAME(when_searched) AS "Days", COUNT(*) AS "Total"  FROM searched_movie WHERE WEEKOFYEAR(when_searched) = WEEKOFYEAR(NOW()) GROUP BY DAY(when_searched) ,DAYNAME(when_searched)   ORDER BY DAY(when_searched) ASC');
+   $date->execute();
+   $data = array();
+   while ($row= $date->fetch(PDO::FETCH_ASSOC)) {
+         $Days = $row['Days'];
+         $Total = $row['Total'];
+
+         $data[] = array('label' => $Days,'count'=>$Total );
+
+   }
+
+     echo json_encode($data);
+}
+
+
+
+ public function MoviesCountReleaseYear()
+{
+  $date =$this->dbh->prepare('select COUNT(*) AS "Total", Year from searched_movie  group by Year ');
+   $date->execute();
+   $data = array();
+   while ($row= $date->fetch(PDO::FETCH_ASSOC)) {
+         $Days = $row['Year'];
+         $Total = $row['Total'];
+
+         $data[] = array('label' => $Days,'count'=>$Total );
+
+   }
+
+     echo json_encode($data);
+}
+
 
 
 public function getMoviesSerached()
