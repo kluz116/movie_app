@@ -365,27 +365,15 @@ if(!isset($_SESSION['email']) && empty($_SESSION['email'])){
 	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
 	<script src="assets/plugins/d3/d3.min.js"></script>
 	<script src="assets/plugins/nvd3/build/nv.d3.js"></script>
-	<script src="assets/plugins/jquery-jvectormap/jquery-jvectormap.min.js"></script>
-	<script src="assets/plugins/jquery-jvectormap/jquery-jvectormap-world-merc-en.js"></script>
+
 	<script src="assets/plugins/bootstrap-calendar/js/bootstrap_calendar.min.js"></script>
 	<script src="assets/plugins/gritter/js/jquery.gritter.js"></script>
 	<script src="assets/js/demo/dashboard-v2.min.js"></script>
 	<!-- ================== END PAGE LEVEL JS ================== -->
 	
 
-
-		<!-- ================== BEGIN PAGE LEVEL JS ================== -->
-	<script src="assets/plugins/d3/d3.min.js"></script>
-	<script src="assets/plugins/nvd3/build/nv.d3.js"></script>
-	
 	<!-- ================== END PAGE LEVEL JS ================== -->
-	
-	<script>
-		$(document).ready(function() {
-			App.init();
-			DashboardV2.init();
-		});
-	</script>
+
 
 	<script data-require="d3@*" data-semver="4.0.0" src="https://d3js.org/d3.v4.min.js"></script>
     <script>
