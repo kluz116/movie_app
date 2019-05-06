@@ -190,7 +190,7 @@ public function MoviesWithNoAwards()
 public function getMoviesSerached()
 {
 	try{
-		 $date =$this->dbh->prepare('select * from searched_movie');
+		 $date =$this->dbh->prepare('select * from searched_movie order by search_id desc ');
 		 $date->execute();
 
 		 echo "<table id='data-table-fixed-header' class='table table-bordered table-striped'>";

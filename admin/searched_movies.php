@@ -1,4 +1,3 @@
-
 <?php
 require 'config.inc.php';
 if(!isset($_SESSION['email']) && empty($_SESSION['email'])){
@@ -28,10 +27,9 @@ if(!isset($_SESSION['email']) && empty($_SESSION['email'])){
 	<meta content="" name="author" />
 	
 	<!-- ================== BEGIN BASE CSS STYLE ================== -->
-	<link href="../../../../fonts.googleapis.com/cssff98.css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+		
 	<link href="assets/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
 	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-	<link href="assets/plugins/font-awesome/css/all.min.css" rel="stylesheet" />
 	<link href="assets/plugins/animate/animate.min.css" rel="stylesheet" />
 	<link href="assets/css/default/style.min.css" rel="stylesheet" />
 	<link href="assets/css/default/style-responsive.min.css" rel="stylesheet" />
@@ -43,7 +41,6 @@ if(!isset($_SESSION['email']) && empty($_SESSION['email'])){
 	<link href="assets/plugins/jquery-jvectormap/jquery-jvectormap.css" rel="stylesheet" />
 	<link href="assets/plugins/bootstrap-calendar/css/bootstrap_calendar.css" rel="stylesheet" />
 	<link href="assets/plugins/gritter/css/jquery.gritter.css" rel="stylesheet" />
-	<link href="assets/plugins/nvd3/build/nv.d3.css" rel="stylesheet" />
 
 		<!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
 	<link href="assets/plugins/DataTables/media/css/dataTables.bootstrap.min.css" rel="stylesheet" />

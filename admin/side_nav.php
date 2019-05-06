@@ -29,7 +29,12 @@
 				<!-- begin sidebar nav -->
 				<ul class="nav">
 					<li class="nav-header">Navigation</li>
-					
+					<li>
+						<a href="index.php">
+							<i class="fa fa-home"></i>
+							<span>Home</span> 
+						</a>
+					</li>
 					<li>
 						<a href="searched_movies.php">
 							<div class="icon-img">

@@ -1,6 +1,4 @@
-
 <?php
-
 require 'config.inc.php';
 require'connect.php';
 $obj = new Config();
